@@ -2,15 +2,20 @@
   "name": "static_node_and_express_portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "nodemonConfig": {
+    "exec": "node app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^5.2.1",
+    "nodemon": "^3.1.14",
     "pug": "^3.0.4"
   }
 }
