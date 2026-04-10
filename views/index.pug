@@ -4,25 +4,27 @@ block content
 
   article.portfolio-intro
 
-    //- Replace with your own heading like 'My Portfolio', or 'Hey, Potential Employers', or 'Let's make the web great together!' 
-    h1 Heading
 
-    //- Replace with a description for your portfolio, what this project is, it's purpose, what it's supposed to accomplish, etc. 
-    p Portfolio description
+    h1 My Portfolio -  V2
+
+
+    p This section showcases the projects I’ve built as part of my Full-Stack JavaScript journey through Unit 06.Throughout these projects, I’ve developed a strong foundation in HTML, CSS, and modern JavaScript (ES6), including object-oriented programming (OOP) concepts. I’ve also expanded my skills into the backend using Node.js, Express, and Pug, allowing me to build dynamic, server-rendered web applications. Each project reflects my growth as a developer, with a focus on writing clean, maintainable code and creating user-friendly experiences.
+
+
 
 
   article.portfolio-project-thumbs
     .projects-box.box.grid
 
       //- Use the Pug `each` iterator to loop over the projects in your data file  
-      
+      each project in projects
         //- Use the example Pug code below and interpolated template literals as needed to dynamically generate:
           //- The paths in the link's href and img's src attributes
           //- The text 'Thumbnail' interpolated with the project title for the img's alt attribute
           //- The project title for the h5 element's text
 
         .cell
-          a(href='#')
-            img.thumbnail(src='https://placehold.it/550x550', alt='')
-            h5 My Site
+          a(href=`/projects/${project.id}`)
+            img.thumbnail(src=`${project.image_urls[0]}`, alt='Photo of the project in desktop screen')
+            h5= project.project_name
 

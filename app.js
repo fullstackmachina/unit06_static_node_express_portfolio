@@ -1,10 +1,11 @@
-// Import app dependencies, load project data, and configure Express middleware.
+// IMPORT DEPENDENCIES & CONFIGURE EXPRESS
 const express = require("express");
-const { projects } = require("./data.json");
 const path = require("path");
 const app = express();
 app.use("/static", express.static(path.join(__dirname, "public")));
+app.use("/images", express.static(path.join(__dirname, "images")));
 app.set("view engine", "pug");
+const { projects } = require("./data.json");
 
 /* ROUTES */
 /* GET HOME PAGE */
@@ -63,7 +64,7 @@ app.use(function handleGlobalError(err, req, res, next) {
   res.send(err.message);
 });
 
-// Turn on Express server
+// TURN ON EXPRESS SERVER
 app.listen(3000, () => {
   console.log("The application is running on localhost:3000!");
 });
