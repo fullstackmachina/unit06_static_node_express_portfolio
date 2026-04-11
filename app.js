@@ -10,7 +10,8 @@ const { projects } = require("./data.json");
 /* ROUTES */
 /* GET HOME PAGE */
 app.get("/", (req, res) => {
-  res.render("index", { projects });
+  const completed = projects.filter((project) => project.type === "completed");
+  res.render("index", { projects: completed });
 });
 
 /* GET ABOUT PAGE */
@@ -34,7 +35,10 @@ app.get("/projects/:id", (req, res, next) => {
 
 /* GET FUTURE PROJECTS PAGE */
 app.get("/future_projects", (req, res) => {
-  res.render("future_projects");
+  const future_projects = projects.filter(
+    (project) => project.type === "future",
+  );
+  res.render("future_projects", { projects: future_projects });
 });
 
 /* GET RELEASES PAGE */

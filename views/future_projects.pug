@@ -2,14 +2,23 @@ extends layout.pug
 
 block content
 
-  nav.nav
-    a(href='/')
-      span &larr;
-      |  Back
+
+  article.portfolio-intro
+
+
+    h1 Future projects
+
+
+    p As I continue my Full-Stack JavaScript Techdegree with Treehouse, upcoming projects will focus on expanding both my frontend and backend development skills. I will be working with React to build modern, component-based user interfaces, as well as learning SQL for database management and data persistence. I will also explore REST APIs, including how to design, build, and consume them in real-world applications. These projects will culminate in the development of a fully functional full-stack application, integrating frontend, backend, and database layers into a complete and scalable solution.
 
 
 
-  nav.nav
-      a(href='/')
-        span &larr;
-        |  Back
+  article.portfolio-project-thumbs
+    .projects-box.box.grid
+
+      each project in projects
+
+        .cell
+          a(href=`/projects/${project.id}`)
+            img.thumbnail(src=`${project.image_urls[0]}`, alt='Photo of the project in desktop screen')
+            h5= project.project_name

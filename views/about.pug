@@ -8,52 +8,59 @@ block content
       |  Back
 
   article.portfolio-about
-    .inner-wrapper.flex-row-wrap.two-col
+    .inner-wrapper
       .about-intro-box.box
-
-        //- Replace with your name
-        h1 Name
-
-        //- Feel free to personalize the title below
+        h1 Roxanne Perron
         p Full Stack JavaScript Developer
 
-
         .about-bio
+          p Hello, I'm Roxanne - a Full-Stack JavaScript Developer in training with a background in Quality Assurance.
+          p My experience in QA has shaped the way I approach development: with attention to detail, a strong focus on user experience, and a commitment to writing clean, reliable code. Over time, I've transitioned from testing applications to building them, applying the same rigor to every project I create.
+          p
+            | Through my journey with 
+            a(href='https://teamtreehouse.com/techdegree/full-stack-javascript' target='_blank' rel='noopener noreferrer') Treehouse
+            | , I've developed skills in HTML, CSS, JavaScript (ES6 & OOP), and backend technologies such as Node.js, Express, and Pug. I'm continuously expanding my knowledge and working toward building fully integrated, full-stack applications.
+          p My next steps include learning React, SQL, and REST APIs, allowing me to build more dynamic, data-driven, and scalable applications.
+          p I'm passionate about learning, improving, and turning ideas into functional and user-friendly web experiences.
 
-          //- Replace the boilerplate below with your best elevator pitch
-          p This is my elevator pitch. It is the elevator pitch to end all elevator pitches. Your mind is blown. Your mortal brain can scarcely process how well my prior experience maps to your open dev position. 
-
+      .skills-overview-box.box
+        .skills-overview
+          h6 Skills Snapshot
+          .skill-meter
+            .skill-meter-label
+              span HTML / CSS
+              span 80%
+            .skill-meter-track
+              span.skill-meter-fill(style='width: 80%')
+          .skill-meter
+            .skill-meter-label
+              span JavaScript
+              span 70%
+            .skill-meter-track
+              span.skill-meter-fill(style='width: 70%')
+          .skill-meter
+            .skill-meter-label
+              span Node.js / Express
+              span 60%
+            .skill-meter-track
+              span.skill-meter-fill(style='width: 60%')
+          .skill-meter
+            .skill-meter-label
+              span Pug
+              span 60%
+            .skill-meter-track
+              span.skill-meter-fill(style='width: 60%')
+          .skill-meter
+            .skill-meter-label
+              span React / SQL / REST APIs (in progress)
+              span 35%
+            .skill-meter-track
+              span.skill-meter-fill(style='width: 35%')
 
       .skills-contact-box.box
-        h6 Skills
-
-        //- Replace skills below with your own skills — at this point, you should be able to list as many as ten skills
-        ul
-          li HTML
-          li CSS
-          li JavaScript
-          li Git and GitHub
-          li VS Code
-          li Accessibility
-          li OOP
-          li Fetch and Public APIs
-          li Node.js
-          li Express
-          li Pug
-
         h6 Contact Info
-
-        //- Replace with your own contact info - feel free to use fake information if you prefer
-        ul
-          li 555-555-1234
-          li email@email.com
-
-        //- Add URLs to the hrefs below to link to your social media accounts - feel free to use non-personal links to social media home pages if you prefer
-        a.btn-link(href='') LinkedIn
-        a.btn-link(href='') GitHub
-        a.btn-link(href='') Twitter
-
-    nav.nav
-      a(href='/')
-        span &larr;
-        |  Back
+        p Let's connect and follow my progress as I keep building full-stack projects.
+        .skills-contact-actions
+          a.btn-link(href='https://www.linkedin.com/in/roxanne-perron-97170917b/' target='_blank' rel='noopener noreferrer') LinkedIn
+          a.btn-link(href='https://github.com/fullstackmachina' target='_blank' rel='noopener noreferrer') GitHub
+          a.btn-link(href='mailto:roxanneperron11@gmail.com') Gmail
