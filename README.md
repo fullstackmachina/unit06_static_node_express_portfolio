@@ -25,8 +25,8 @@ Initialize a Node.js project
 Install and configure Express and Pug
 Create and use a `data.json` file
 Set up routes for:
-- Home (`/`)
-- About (`/about`)
+    -  Home (`/`)
+    - About (`/about`)
 - Project detail (`/projects/:id`)
 Implement middleware and static file handling
 Handle 404 errors and global server errors
@@ -34,13 +34,13 @@ Render project data dynamically with Pug templates
 
 ⭐ Extra Credit Features
 
-`npm start` configured in `package.json`
-Custom `page-not-found.pug`
-Custom `error.pug`
-Personalized styling and branding
-Additional custom pages:
-- `future_projects`
-- `releases`
+- `npm start` configured in `package.json`
+- Custom `page-not-found.pug`
+- Custom `error.pug`
+- Personalized styling and branding
+- Additional custom pages:
+    - `future_projects`
+    - `releases`
 
 ✨ Personal Enhancements
 
