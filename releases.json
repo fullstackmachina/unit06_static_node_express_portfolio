@@ -1,0 +1,61 @@
+{
+    "releases": [
+        {
+            "version":"2.1",
+            "type":"minor",
+            "status":"in progress",
+            "description":"New portfolio project added",
+            "changes":["Unit 07 completed"],
+              "target_release_date": "April 30, 2026"
+        },
+        {
+            "version":"2.2",
+            "type":"minor",
+            "status":"to do",
+            "description":"New portfolio project added",
+            "changes":["Unit 08 completed"],
+              "target_release_date": "May 2026"
+        },
+        {
+            "version":"2.3",
+            "type":"minor",
+            "status":"to do",
+            "description":"New portfolio project added",
+            "changes":["Unit 09 completed"],
+             "target_release_date": "Late May 2026"
+        },
+        {
+            "version":"2.4",
+            "type":"minor",
+            "status":"to do",
+            "description":"New portfolio project added",
+            "changes":["Unit 10 completed"],
+              "target_release_date": "June 2026"
+        },
+        {
+            "version":"2.5",
+            "type":"minor",
+            "status":"to do",
+            "description":"New portfolio project added",
+            "changes":["Unit 11 completed"],
+              "target_release_date": "Late June 2026"
+        },
+               {
+            "version":"To be determined",
+            "type":"minor",
+            "status":"to do",
+            "description":"Portfolio architecture update",
+            "changes":["Create a file specifically for routes", "Create a file specifically for errors"],
+              "target_release_date": "TBD"
+        },
+        {
+            "version":"To be determined",
+            "type":"minor",
+            "status":"to do",
+            "description":"UX improvements on Project #5",
+            "changes":["Add a loading state while fetching data from the API", "Adapt modal navigation to work with filtered search results"],
+            "target_release_date": "TBD"
+        }
+
+    ]
+}

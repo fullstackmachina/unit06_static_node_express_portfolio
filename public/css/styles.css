@@ -177,22 +177,27 @@ body.sidebar-open .wrapper {
 
 .sidebar .thumbnail {
   width: 100%;
-  max-width: 250px;
-  border: 3px solid var(--white);
-  border-radius: 18px;
+  max-width: 274px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border: none;
+  border-radius: 999px;
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.35),
-    0 0 18px rgba(209, 0, 122, 0.28);
+    0 16px 34px rgba(0, 0, 0, 0.34),
+    0 0 26px rgba(209, 0, 122, 0.22);
   transition:
     transform 0.25s ease,
-    box-shadow 0.25s ease;
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 }
 
 .sidebar .thumbnail:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.01);
+  filter: saturate(1.04);
   box-shadow:
-    0 14px 32px rgba(0, 0, 0, 0.38),
-    0 0 24px rgba(209, 0, 122, 0.38);
+    0 22px 40px rgba(0, 0, 0, 0.38),
+    0 0 34px rgba(209, 0, 122, 0.3);
 }
 
 .thumbnail-box {
@@ -200,9 +205,10 @@ body.sidebar-open .wrapper {
 }
 
 .thumbnail-box {
-  padding: 12px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.06);
+  padding: 0;
+  border-radius: 999px;
+  background: transparent;
+  box-shadow: none;
 }
 .dev-intro-box {
   padding: 10px;
@@ -211,6 +217,21 @@ body.sidebar-open .wrapper {
 .sidebar h5 {
   color: var(--off-white);
   margin: 0 auto 0.5rem;
+}
+
+.sidebar-tagline {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(209, 0, 122, 0.14);
+}
+
+.sidebar-tagline-accent {
+  font-family: var(--font-heading);
+  color: var(--magenta-light);
+  text-shadow:
+    0 0 12px rgba(255, 46, 166, 0.3),
+    0 0 24px rgba(209, 0, 122, 0.18);
 }
 
 .sidebar p {
@@ -565,6 +586,153 @@ body.sidebar-open .wrapper {
   box-shadow: 0 16px 24px rgba(209, 0, 122, 0.22);
 }
 
+.btn-link.is-disabled {
+  cursor: default;
+  color: var(--magenta-dark);
+  background: linear-gradient(
+    135deg,
+    rgba(209, 0, 122, 0.08) 0%,
+    rgba(138, 0, 79, 0.12) 100%
+  );
+  border: 1px dashed rgba(138, 0, 79, 0.28);
+  box-shadow: none;
+}
+
+.btn-link.is-disabled:hover {
+  transform: none;
+  background: linear-gradient(
+    135deg,
+    rgba(209, 0, 122, 0.08) 0%,
+    rgba(138, 0, 79, 0.12) 100%
+  );
+  box-shadow: none;
+}
+
+/* ---------- RELEASES ---------- */
+.releases-intro {
+  max-width: 1200px;
+}
+
+.releases-box {
+  padding-top: 24px;
+}
+
+.release-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding: 16px 0 24px;
+}
+
+.release-card {
+  flex: 0 0 auto;
+  padding: 24px 26px 22px;
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(209, 0, 122, 0.12);
+}
+
+.release-card:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.release-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.release-version {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.release-status,
+.release-type,
+.release-date {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.release-status {
+  color: var(--off-white);
+  background: linear-gradient(
+    90deg,
+    var(--magenta-dark) 0%,
+    var(--magenta) 100%
+  );
+}
+
+.release-status.status-in-progress {
+  color: var(--off-white);
+  background: linear-gradient(
+    90deg,
+    #b10068 0%,
+    var(--magenta-light) 100%
+  );
+}
+
+.release-status.status-to-do {
+  color: var(--black);
+  background: linear-gradient(
+    90deg,
+    #ece3e8 0%,
+    #d8ccd2 100%
+  );
+}
+
+.release-status.status-released {
+  color: var(--off-white);
+  background: linear-gradient(
+    90deg,
+    #177245 0%,
+    #28b06b 100%
+  );
+}
+
+.release-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.release-type,
+.release-date {
+  color: var(--magenta-dark);
+  background: rgba(209, 0, 122, 0.08);
+}
+
+.release-description {
+  margin: 0 0 18px;
+  line-height: 1.8;
+}
+
+.release-subtitle {
+  margin-bottom: 12px;
+}
+
+.release-change-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.release-change-list li {
+  margin-bottom: 8px;
+  color: var(--gray-text);
+}
+
 /* ---------- RESPONSIVE ---------- */
 
 @media screen and (min-width: 768px) {
@@ -620,6 +788,10 @@ body.sidebar-open .wrapper {
     width: auto;
     min-width: 150px;
     margin: 0;
+  }
+
+  .release-card {
+    padding: 28px 30px 24px;
   }
 }
 @media screen and (min-width: 1024px) {

@@ -23,9 +23,17 @@ block content
           each technology in project.technologies
 
             li= technology
-     
-        a.btn-link(href=`${project.live_link}` target='_blank' rel='noopener noreferrer') Live Demo
-        a.btn-link(href=`${project.github_link}` target='_blank' rel='noopener noreferrer') GitHub Repo
+        if project.id === 5
+          span.btn-link.is-disabled You're viewing it
+        else if project.live_link
+          a.btn-link(href=`${project.live_link}` target='_blank' rel='noopener noreferrer') Live Demo
+        else
+          span.btn-link.is-disabled Coming soon
+        if project.github_link  
+          a.btn-link(href=`${project.github_link}` target='_blank' rel='noopener noreferrer') GitHub Repo
+        else
+          span.btn-link.is-disabled Coming soon
+  
 
     .project-img-box.box
       h6 Project Preview

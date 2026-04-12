@@ -6,6 +6,7 @@ app.use("/static", express.static(path.join(__dirname, "public")));
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.set("view engine", "pug");
 const { projects } = require("./data.json");
+const { releases } = require("./releases.json");
 
 /* ROUTES */
 /* GET HOME PAGE */
@@ -43,7 +44,7 @@ app.get("/future_projects", (req, res) => {
 
 /* GET RELEASES PAGE */
 app.get("/releases", (req, res) => {
-  res.render("releases");
+  res.render("releases", { releases });
 });
 
 /* ERRORS */
@@ -60,15 +61,21 @@ app.use(function handleGlobalError(err, req, res, next) {
     err.status = 500;
   }
   if (!err.message) {
-    err.message = "Oops! Something went wrong!";
+    err.message = "Oops... Something went wrong!";
   }
 
   console.log(err.status, err.message);
   res.status(err.status);
-  res.send(err.message);
+  if (err.status === 404) {
+    res.render("page-not-found", { error: err });
+  } else {
+    res.render("error", { error: err });
+  }
 });
 
 // TURN ON EXPRESS SERVER
-app.listen(3000, () => {
-  console.log("The application is running on localhost:3000!");
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`The application is running on localhost:${port}!`);
 });

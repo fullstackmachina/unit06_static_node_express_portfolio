@@ -7,7 +7,7 @@
       "technologies": ["HTML", "CSS", "JavaScript (Arrays, Objects, Functions)"],
       "live_link": "https://fullstackmachina.github.io/unit01_a_random_quote_generator/",
       "github_link": "https://github.com/fullstackmachina/unit01_a_random_quote_generator",
-      "image_urls": ["images/project1_desktop.png","images/project1_tablet.png","images/project1_mobile.png"],
+      "image_urls": ["images/project1_desktop.webp","images/project1_tablet.webp","images/project1_mobile.webp"],
       "type": "completed"
     },
         {
@@ -17,7 +17,7 @@
       "technologies":  ["HTML", "CSS", "JavaScript (DOM Manipulation, Event handling)"],
       "live_link": "https://fullstackmachina.github.io/unit02_data_pagination_and_filtering/",
       "github_link": "https://github.com/fullstackmachina/unit02_data_pagination_and_filtering",
-      "image_urls": ["images/project2_desktop.png","images/project2_tablet.png","images/project2_mobile.png"],
+      "image_urls": ["images/project2_desktop.webp","images/project2_tablet.webp","images/project2_mobile.webp"],
       "type": "completed"
     },
         {
@@ -27,7 +27,7 @@
       "technologies": ["HTML", "CSS", "JavaScript (DOM Manipulation, Event handling, Form validation, Accessibility)"],
       "live_link": "https://fullstackmachina.github.io/unit03_interactive_form/",
       "github_link": "https://github.com/fullstackmachina/unit03_interactive_form",
-      "image_urls": ["images/project3_desktop.png","images/project3_tablet.png","images/project3_mobile.png"],
+      "image_urls": ["images/project3_desktop.webp","images/project3_tablet.webp","images/project3_mobile.webp"],
       "type": "completed"
     },
         {
@@ -37,7 +37,7 @@
       "technologies": ["HTML", "CSS", "JavaScript (Object-Oriented programming,DOM Manipulation, Event handling, State management)"],
       "live_link": "https://fullstackmachina.github.io/unit04_oop_game/",
       "github_link": "https://github.com/fullstackmachina/unit04_oop_game",
-      "image_urls": ["images/project4_desktop.png","images/project4_tablet.png","images/project4_mobile.png"],
+      "image_urls": ["images/project4_desktop.webp","images/project4_tablet.webp","images/project4_mobile.webp"],
       "type": "completed"
     },
         {
@@ -47,7 +47,7 @@
       "technologies": ["HTML", "CSS", "JavaScript (Promises, Async & await, DOM manipulation, Arrays methods, Public API integration)"],
       "live_link": "https://fullstackmachina.github.io/unit05_public_api_request/",
       "github_link": "https://github.com/fullstackmachina/unit05_public_api_request",
-      "image_urls": ["images/project5_desktop.png","images/project5_tablet.png","images/project5_mobile.png"],
+      "image_urls": ["images/project5_desktop.webp","images/project5_tablet.webp","images/project5_mobile.webp"],
       "type": "completed"
     },
     {
@@ -55,9 +55,9 @@
       "project_name": "Unit 06 - Static Node.js and Express Portfolio",
       "description": "A portfolio site using Node.js, Express, and Pug templates to showcase your projects with a modern landing page, about page, and project pages.",
       "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "Express", "Pug"],
-      "live_link": "https://github.com/fullstackmachina/unit06_static_node_express_portfolio",
+      "live_link": null,
       "github_link": "https://github.com/fullstackmachina/unit06_static_node_express_portfolio",
-      "image_urls": ["images/project6_desktop.png", "images/project6_tablet.png","images/project6_mobile.png"],
+      "image_urls": ["images/project6_desktop.webp", "images/project6_tablet.webp","images/project6_mobile.webp"],
        "type": "completed"
     },
     {
@@ -67,7 +67,7 @@
       "technologies": ["HTML", "CSS", "JavaScript", "React", "API"],
       "live_link": null,
       "github_link": null,
-      "image_urls": ["images/project6_desktop.png"],
+      "image_urls": ["images/project7_desktop.webp"],
        "type": "future"
     },
     {
@@ -77,7 +77,7 @@
       "technologies": ["SQL", "Sequelize", "JavaScript", "React"],
       "live_link": null,
       "github_link": null,
-      "image_urls": ["images/project6_desktop.png"],
+      "image_urls": ["images/project8_desktop.webp"],
        "type": "future"
     },
     {
@@ -87,7 +87,7 @@
       "technologies": ["SQL", "Sequelize", "JavaScript", "React"],
       "live_link": null,
       "github_link": null,
-      "image_urls": ["images/project6_desktop.png"],
+      "image_urls": ["images/project9_desktop.webp"],
        "type": "future"
     },
     {
@@ -97,7 +97,7 @@
       "technologies": ["React", "Rest API"],
       "live_link": null,
       "github_link": null,
-      "image_urls": ["images/project6_desktop.png"],
+      "image_urls": ["images/project10_desktop.webp"],
        "type": "future"
     },
     {
@@ -107,7 +107,7 @@
       "technologies": ["AI-Assisted Development"],
       "live_link": null,
       "github_link": null,
-      "image_urls": ["images/project6_desktop.png"],
+      "image_urls": ["images/project11_desktop.webp"],
        "type": "future"
     }
   ]

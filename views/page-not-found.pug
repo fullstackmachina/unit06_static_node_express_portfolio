@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+
+  nav.nav
+    a(href='/')
+      span &larr;
+      |  Back to home
+
+  article.portfolio-about
+    .inner-wrapper
+      .box
+        h1 Page Not Found
+        p= error.message
+        p Status code: #{error.status}
+        if error.stack
+          pre= error.stack
+

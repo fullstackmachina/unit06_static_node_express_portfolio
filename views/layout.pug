@@ -9,34 +9,29 @@ html(lang="en" dir="ltr")
     link(rel='stylesheet', href='/static/css/normalize.css')
     link(rel='stylesheet', href='/static/css/styles.css')
 
-
   body
     #my-info.sidebar
       .sidebar-info-box
         br
         .thumbnail-box
-          img.thumbnail(src='/images/profile.png', alt='My profile photo')
+          img.thumbnail(src='/images/profile.webp', alt='My profile photo')
         .dev-intro-box
-
-      
-          h5 Hello World, I’m Rox ! 
-
-
-          p Full-Stack JavaScript Developer in training, transitioning from QA. I design and build interactive web experiences with attention to detail, performance, and user experience.
+          h5.sidebar-tagline
+            | Hello World, I'm 
+            span.sidebar-tagline-accent Rox
+            |  !
 
         nav.sidebar-nav
+          a.sidebar-link(href='/about') About me
           a.sidebar-link(href='/') My projects
-          a.sidebar-link(href='/about') About me  
-          a.sidebar-link(href='/future_projects') Future projects 
+          a.sidebar-link(href='/future_projects') Future projects
           a.sidebar-link(href='/releases') Releases and updates
 
     .wrapper
       .header
         .header-info-box
           button#menu-icon.menu-icon(type='button' data-toggle='my-info')
-
-      
-          span Hello World, I’m Rox !
+          span Hello World, I'm Rox !
 
       block content
 
