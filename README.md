@@ -4,7 +4,7 @@ Treehouse Full Stack JavaScript Techdegree – Unit 06
 
 A dynamic portfolio site built with Node.js, Express, and Pug. This project showcases my work through reusable templates, dynamic project pages, custom routing, and error handling. It also reflects my personal visual branding with a custom magenta, black, and white theme.
 
-🔗 Live : Coming soon
+🔗 Live : https://unit06-static-node-express-portfolio.onrender.com/
 
 📸 Preview 📸 Preview
 
