@@ -5,6 +5,7 @@ const app = express();
 app.use("/static", express.static(path.join(__dirname, "public")));
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
 const { projects } = require("./data.json");
 const { releases } = require("./releases.json");
 
