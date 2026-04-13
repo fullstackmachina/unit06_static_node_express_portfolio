@@ -76,6 +76,6 @@ app.use(function handleGlobalError(err, req, res, next) {
 // TURN ON EXPRESS SERVER
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => {
-  console.log(`The application is running on localhost:${port}!`);
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Server running on port ${port}`);
 });
