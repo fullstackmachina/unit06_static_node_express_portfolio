@@ -22,10 +22,12 @@ html(lang="en" dir="ltr")
             |  !
 
         nav.sidebar-nav
-          a.sidebar-link(href='/about') About me
+
           a.sidebar-link(href='/') My projects
           a.sidebar-link(href='/future_projects') Future projects
-          a.sidebar-link(href='/releases') Releases and updates
+          a.sidebar-link(href='/releases') Releases
+          a.sidebar-link(href='/about') About me
+          a.sidebar-link(href='/contact') Contact
 
     .wrapper
       .header
@@ -35,4 +37,5 @@ html(lang="en" dir="ltr")
 
       block content
 
+  script(src='https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js')
   script(src='/static/js/script.js')

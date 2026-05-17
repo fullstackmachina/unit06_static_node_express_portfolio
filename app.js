@@ -21,6 +21,11 @@ app.get("/about", (req, res) => {
   res.render("about");
 });
 
+/* GET CONTACT PAGE */
+app.get("/contact", (req, res) => {
+  res.render("contact");
+});
+
 /* GET PROJECTS PAGE */
 app.get("/projects/:id", (req, res, next) => {
   const projectId = req.params.id;
