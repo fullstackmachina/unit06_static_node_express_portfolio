@@ -7,7 +7,6 @@ app.use("/images", express.static(path.join(__dirname, "images")));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 const { projects } = require("./data.json");
-const { releases } = require("./releases.json");
 
 /* ROUTES */
 /* GET HOME PAGE */
@@ -46,11 +45,6 @@ app.get("/future_projects", (req, res) => {
     (project) => project.type === "future",
   );
   res.render("future_projects", { projects: future_projects });
-});
-
-/* GET RELEASES PAGE */
-app.get("/releases", (req, res) => {
-  res.render("releases", { releases });
 });
 
 /* ERRORS */

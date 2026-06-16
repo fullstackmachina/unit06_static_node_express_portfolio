@@ -445,9 +445,7 @@ body.sidebar-open .wrapper {
 .portfolio-intro p {
   text-rendering: optimizeLegibility;
   font-size: 125%;
-  margin: 0 auto;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--gray-light);
+  margin: 0 auto 16px;
 }
 
 .projects-box h5 {

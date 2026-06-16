@@ -28,19 +28,14 @@ if (contactForm) {
   const messageCount = contactForm.querySelector('#message-count');
   const submitButton = contactForm.querySelector('.contact-submit');
   const formStatus = contactForm.querySelector('.form-status');
-  const maxNameWords = Number(nameField.dataset.maxWords);
-  const maxSubjectWords = Number(subjectField.dataset.maxWords);
-  const maxWords = Number(messageField.dataset.maxWords);
+  const maxNameChars = Number(nameField.dataset.maxChars);
+  const maxSubjectChars = Number(subjectField.dataset.maxChars);
+  const maxChars = Number(messageField.dataset.maxChars);
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const emailJsConfig = {
     publicKey: contactForm.dataset.emailjsPublicKey,
     serviceId: contactForm.dataset.emailjsServiceId,
     templateId: contactForm.dataset.emailjsTemplateId,
-  };
-
-  const countWords = (value) => {
-    const words = value.trim().match(/\S+/g);
-    return words ? words.length : 0;
   };
 
   const setFieldError = (field, message) => {
@@ -67,18 +62,18 @@ if (contactForm) {
       return false;
     }
 
-    if (field === nameField && countWords(field.value) > maxNameWords) {
-      setFieldError(field, `Please keep your name to ${maxNameWords} words or fewer.`);
+    if (field === nameField && field.value.length > maxNameChars) {
+      setFieldError(field, `Name must be ${maxNameChars} characters or fewer.`);
       return false;
     }
 
-    if (field === subjectField && countWords(field.value) > maxSubjectWords) {
-      setFieldError(field, `Please keep your subject to ${maxSubjectWords} words or fewer.`);
+    if (field === subjectField && field.value.length > maxSubjectChars) {
+      setFieldError(field, `Subject must be ${maxSubjectChars} characters or fewer.`);
       return false;
     }
 
-    if (field === messageField && countWords(field.value) > maxWords) {
-      setFieldError(field, `Please keep your message to ${maxWords} words or fewer.`);
+    if (field === messageField && field.value.length > maxChars) {
+      setFieldError(field, `Message must be ${maxChars} characters or fewer.`);
       return false;
     }
 
@@ -86,11 +81,11 @@ if (contactForm) {
     return true;
   };
 
-  const updateWordCount = (field, counter, limit) => {
-    const wordCount = countWords(field.value);
+  const updateCharCount = (field, counter, limit) => {
+    const charCount = field.value.length;
 
-    counter.textContent = `${wordCount} / ${limit} words`;
-    counter.classList.toggle('is-over-limit', wordCount > limit);
+    counter.textContent = `${charCount} / ${limit}`;
+    counter.classList.toggle('is-over-limit', charCount > limit);
   };
 
   const setFormStatus = (message, type = '') => {
@@ -104,37 +99,41 @@ if (contactForm) {
     });
   };
 
-  fields.forEach((field) => {
-    field.addEventListener('blur', () => validateField(field));
-    field.addEventListener('input', () => {
-      validateField(field);
+  let submitAttempted = false;
 
+  fields.forEach((field) => {
+    field.addEventListener('input', () => {
       if (field === nameField) {
-        updateWordCount(nameField, nameCount, maxNameWords);
+        updateCharCount(nameField, nameCount, maxNameChars);
       }
 
       if (field === subjectField) {
-        updateWordCount(subjectField, subjectCount, maxSubjectWords);
+        updateCharCount(subjectField, subjectCount, maxSubjectChars);
       }
 
       if (field === messageField) {
-        updateWordCount(messageField, messageCount, maxWords);
+        updateCharCount(messageField, messageCount, maxChars);
+      }
+
+      if (submitAttempted) {
+        validateField(field);
       }
     });
   });
 
-  updateWordCount(nameField, nameCount, maxNameWords);
-  updateWordCount(subjectField, subjectCount, maxSubjectWords);
-  updateWordCount(messageField, messageCount, maxWords);
+  updateCharCount(nameField, nameCount, maxNameChars);
+  updateCharCount(subjectField, subjectCount, maxSubjectChars);
+  updateCharCount(messageField, messageCount, maxChars);
 
   contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    const isValid = fields.every((field) => validateField(field));
+    submitAttempted = true;
+    const isValid = fields.map((field) => validateField(field)).every(Boolean);
 
-    updateWordCount(nameField, nameCount, maxNameWords);
-    updateWordCount(subjectField, subjectCount, maxSubjectWords);
-    updateWordCount(messageField, messageCount, maxWords);
+    updateCharCount(nameField, nameCount, maxNameChars);
+    updateCharCount(subjectField, subjectCount, maxSubjectChars);
+    updateCharCount(messageField, messageCount, maxChars);
 
     if (!isValid) {
       fields.find((field) => field.classList.contains('is-invalid')).focus();
@@ -160,9 +159,9 @@ if (contactForm) {
       );
 
       contactForm.reset();
-      updateWordCount(nameField, nameCount, maxNameWords);
-      updateWordCount(subjectField, subjectCount, maxSubjectWords);
-      updateWordCount(messageField, messageCount, maxWords);
+      updateCharCount(nameField, nameCount, maxNameChars);
+      updateCharCount(subjectField, subjectCount, maxSubjectChars);
+      updateCharCount(messageField, messageCount, maxChars);
       setFormStatus('Thanks! Your message has been sent.', 'is-success');
     } catch (error) {
       setFormStatus('Something went wrong. Please try again in a moment.', 'is-error');
