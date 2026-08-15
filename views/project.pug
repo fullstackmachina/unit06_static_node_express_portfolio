@@ -11,9 +11,10 @@ block content
     .inner-wrapper.flex-row-wrap.two-col
       .project-info-box.box
 
+        if project.status_tag
+          span.project-status-tag= project.status_tag
 
         h1= project.project_name
-
 
         p= project.description
 

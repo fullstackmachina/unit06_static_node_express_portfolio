@@ -11,7 +11,9 @@ const { projects } = require("./data.json");
 /* ROUTES */
 /* GET HOME PAGE */
 app.get("/", (req, res) => {
-  const completed = projects.filter((project) => project.type === "completed");
+  const completed = projects
+    .filter((project) => project.type === "completed")
+    .sort((a, b) => b.id - a.id);
   res.render("index", { projects: completed });
 });
 

@@ -28,4 +28,6 @@ block content
         .cell
           a(href=`/projects/${project.id}`)
             img.thumbnail(src=`${project.image_urls[0]}`, alt='Photo of the project in desktop screen')
+            if project.status_tag
+              span.project-status-tag.project-status-tag--card= project.status_tag
             h5= project.project_name

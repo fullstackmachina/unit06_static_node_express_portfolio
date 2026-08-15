@@ -81,6 +81,12 @@ if (contactForm) {
     return true;
   };
 
+  const enforceMaxLength = (field, limit) => {
+    if (field.value.length > limit) {
+      field.value = field.value.slice(0, limit);
+    }
+  };
+
   const updateCharCount = (field, counter, limit) => {
     const charCount = field.value.length;
 
@@ -104,14 +110,17 @@ if (contactForm) {
   fields.forEach((field) => {
     field.addEventListener('input', () => {
       if (field === nameField) {
+        enforceMaxLength(nameField, maxNameChars);
         updateCharCount(nameField, nameCount, maxNameChars);
       }
 
       if (field === subjectField) {
+        enforceMaxLength(subjectField, maxSubjectChars);
         updateCharCount(subjectField, subjectCount, maxSubjectChars);
       }
 
       if (field === messageField) {
+        enforceMaxLength(messageField, maxChars);
         updateCharCount(messageField, messageCount, maxChars);
       }
 
